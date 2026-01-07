@@ -1,0 +1,75 @@
+/*stile generale per tutti gli elementi*/
+* {                     
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.MuiDrawer-paper .MuiTypography-root {
+    font-family: 'Rische', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 550 !important;
+}
+
+
+@font-face {
+    font-family: 'Rische';
+    src: url('../public/fonts/Rische-Semibold.ttf') format('truetype');
+    font-weight: 550;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rische', sans-serif !important; 
+}
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    height: 100vh;
+    font-family: 'Rische', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.MuiMenu-paper,
+.MuiMenuItem-root,
+.MuiDialog-paper,
+.MuiTooltip-tooltip,
+.MuiPopover-paper,
+.MuiAutocomplete-popper,
+.MuiSelect-select,
+.MuiInputBase-root,
+.MuiButton-root,
+.MuiTypography-root,
+.MuiListItemText-primary,
+.MuiListItemText-secondary {
+    font-family: 'Rische', sans-serif !important;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: 'Rische', sans-serif !important;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
