@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.902540bc.css",
+    "main.js": "/static/js/main.9a008394.js",
+    "static/media/sfondoDashboard.png": "/static/media/sfondoDashboard.78bdeb997ee55078e5e8.png",
+    "static/media/Logo.png": "/static/media/Logo.42d64e1ba3739304d179.png",
+    "static/media/sfondoLogin.jpg": "/static/media/sfondoLogin.6a675339ac2ded048974.jpg",
+    "static/media/sfondoRegistrazione.jpg": "/static/media/sfondoRegistrazione.a41303150b584bfa8ed9.jpg",
+    "static/media/Rische-Semibold.ttf": "/static/media/Rische-Semibold.24789b18e58171870cf9.ttf",
+    "index.html": "/index.html",
+    "main.902540bc.css.map": "/static/css/main.902540bc.css.map",
+    "main.9a008394.js.map": "/static/js/main.9a008394.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.902540bc.css",
+    "static/js/main.9a008394.js"
+  ]
+}
