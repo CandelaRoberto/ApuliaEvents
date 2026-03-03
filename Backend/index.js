@@ -33,7 +33,7 @@ app.use('/api/notifiche', notRouter);
 
 
 app.use(express.static(path.join(__dirname, "build")));
-app.get("*", (req, res) => {
+app.get('/*splat', (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
@@ -43,5 +43,7 @@ server.listen(PORT, ()=>{
     console.log(`Server attivo sulla porta ${PORT}`);
 
 });
+
+
 
 
