@@ -149,12 +149,12 @@ const Post = ({ onPostCreated }) => {
             const data = await res.json();
             if (!res.ok) throw new Error(data.message || "Errore creazione post");
 
-            setMessage("✅ Post creato con successo!");
+            setMessage("Post creato con successo!");
             if (onPostCreated) onPostCreated();
             resetForm();
           } catch (err) {
             console.error(err);
-            setMessage("❌ " + err.message);
+            setMessage(err.message);
           } finally {
             setSubmitting(false);
           }
