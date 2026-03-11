@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../Auth/Slice/authSlice';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { Visibility, VisibilityOff, Person, Lock } from '@mui/icons-material';
 import { CircularProgress, Alert } from '@mui/material';
 import {colors,GlobalStyle,Title,TextLink,InputIcon,FormWrapper} from "../Components/styles";
 import {HeaderBar,LogoImg,BrandText,LoginContainer,FormSectionLog,IllustrationSection,ToggleIcon,FooterText,SubtitleLog,InputContainerLog,InputLog,ErrorMessageLog,SubmitButtonLog,FormGroup} from '../Components/LoginStyles';
@@ -91,7 +91,7 @@ const Login = () => {
                         <form onSubmit={formik.handleSubmit}>
                             <FormGroup>
                                 <InputContainerLog>
-                                    <InputIcon>👤</InputIcon>
+                                    <InputIcon><Person /></InputIcon>
                                     <InputLog
                                         type="text"
                                         name="username"
@@ -109,7 +109,7 @@ const Login = () => {
 
                             <FormGroup>
                                 <InputContainerLog>
-                                    <InputIcon>🔒</InputIcon>
+                                    <InputIcon><Lock /></InputIcon>
                                     <InputLog
                                         type={showPassword ? 'text' : 'password'}
                                         name="password"
