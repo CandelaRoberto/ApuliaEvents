@@ -79,10 +79,8 @@ const DashBoard = () => {
     const selectedUsername = utenteSelezionatoOggetto?.username;
     const drawerWidth = 240;
 
-    // --- FUNZIONE CARICAMENTO POST CORRETTA ---
     const loadPosts = async (isMounted) => {
         try {
-            // Definiamo 'res' assegnandogli il risultato della fetch
             const res = await fetch("https://apuliaeventsbackend.onrender.com/api/post/posts", {
                 credentials: 'include'
             });
@@ -282,3 +280,4 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
+
