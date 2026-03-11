@@ -6,6 +6,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { CircularProgress, Alert } from '@mui/material';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { Person, Lock,Email } from '@mui/icons-material';
 import {colors,GlobalStyle,Title,FormWrapper,TextLink} from "../Components/styles";
 import {RegistrationContainer,FormGroup,PhotoSection,FormSectionReg,InputContainerReg,RadioContainer,RadioLabel,StyledForm,InputIconReg,InputReg,ErrorMessageReg,SubmitButtonReg,SubtitleReg} from '../Components/RegistrazioneStyles';
 
@@ -122,7 +123,7 @@ const Registrazione = () => {
                             {/* Nome */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>👤</InputIconReg>
+                                    <InputIconReg><Person /></InputIconReg>
                                     <InputReg
                                         type="text"
                                         name="nome"
@@ -141,7 +142,7 @@ const Registrazione = () => {
                             {/* Cognome */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>👤</InputIconReg>
+                                    <InputIconReg><Person /></InputIconReg>
                                     <InputReg
                                         type="text"
                                         name="cognome"
@@ -160,7 +161,7 @@ const Registrazione = () => {
                             {/* Username */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>👤</InputIconReg>
+                                    <InputIconReg><Person /></InputIconReg>
                                     <InputReg
                                         type="text"
                                         name="username"
@@ -179,7 +180,7 @@ const Registrazione = () => {
                             {/* Email */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>✉️</InputIconReg>
+                                    <InputIconReg><Email /></InputIconReg>
                                     <InputReg
                                         type="email"
                                         name="email"
@@ -198,7 +199,7 @@ const Registrazione = () => {
                             {/* Password */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>🔒</InputIconReg>
+                                    <InputIconReg><Lock /></InputIconReg>
                                     <InputReg
                                         type={showPassword ? 'text' : 'password'}
                                         name="password"
@@ -232,7 +233,7 @@ const Registrazione = () => {
                             {/* Conferma pass */}
                             <FormGroup>
                                 <InputContainerReg>
-                                    <InputIconReg>🔒</InputIconReg>
+                                    <InputIconReg><Lock /></InputIconReg>
                                     <InputReg
                                         type={showConfirmPassword ? 'text' : 'password'}
                                         name="confermapassword"
