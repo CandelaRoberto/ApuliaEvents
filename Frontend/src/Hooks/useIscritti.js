@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import { io } from "socket.io-client";
-
-const socket = io("https://apuliaeventsbackend.onrender.com", {
-    withCredentials: true,
-    transports: ["websocket", "polling"],
-    autoConnect: true
-});
+import { useNotifiche } from "../Layout/Notifiche/NotificheProvider";
 
 export function useIscritti() {
 
+    const {socket}= useNotifiche();
     const [open, setOpen] = useState(false);
     const [lista, setLista] = useState([]);
     const [postId, setPostId] = useState(null);
@@ -26,24 +21,26 @@ export function useIscritti() {
     };
 
     useEffect(() => {
-        if (!postId) return;
+        if (!postId || !socket) return;
 
-        const handleUpdate = () => {
-            fetch(`https://apuliaeventsbackend.onrender.com/api/post/posts`, {
+        const handleUpdate = async() => {
+            try {
+                const res = await fetch(`https://apuliaeventsbackend.onrender.com/api/post/posts`, {
                 credentials: 'include'
             })
-                .then(res => res.json())
-                .then(all => {
-                    const updated = all.find(p => p._id === postId);
-                    if (updated) setLista(updated.partecipanti);
-                })
-                .catch(err => console.error("Errore aggiornamento iscritti:", err));
+                const all = await res.json();
+                const updated = all.find(p => p._id === postId);
+                if (updated) setLista(updated.partecipanti);
+            }
+                catch(err){
+                    console.error("Errore aggiornamento iscritti:", err);
+                }
         };
 
         socket.on("posts_updated", handleUpdate);
 
         return () => socket.off("posts_updated", handleUpdate);
-    }, [postId]);
+    }, [postId, socket]);
 
     return {
         open,
