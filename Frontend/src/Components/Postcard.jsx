@@ -4,6 +4,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ChatIcon from "@mui/icons-material/Chat";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EuroIcon from '@mui/icons-material/Euro';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import PersonIcon from '@mui/icons-material/Person';
 
 const PostCard = ({ post, user, responsive, onShowOnMap,footerType, onEdit, onDelete,onUnsubscribe,onChat,onPartecipa,onShowIscritti}) => {
     const isMine = post.organizzatore?._id === user?._id;
@@ -244,17 +248,17 @@ const PostCard = ({ post, user, responsive, onShowOnMap,footerType, onEdit, onDe
                     }}
                     onClick={() => onShowOnMap?.(post.location?.coordinates)}
                 >
-                    <span style={{ fontSize: "0.95rem" }}>📍</span>
+                    <LocationOnIcon sx={{ fontSize: "0.95rem" }} />
                     {post.location?.address || "Luogo non disponibile"}
                 </p>
 
-                <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 500 }}>
-                    <span style={{ fontSize: "0.95rem" }}>💶</span>{" "}
+                <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 500 , display: "flex", alignItems: "center", gap: "5px"}}>
+                    <EuroIcon sx={{ fontSize: "0.95rem" }} />
                     {post.prezzo === 0 ? "Gratis" : `€${post.prezzo}`}
                 </p>
 
-                <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 500 }}>
-                    <span style={{ fontSize: "0.95rem" }}>🎟️</span>{" "}
+                <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 500 , display: "flex", alignItems: "center", gap: "5px"}}>
+                    <ConfirmationNumberIcon sx={{ fontSize: "0.95rem" }} />
                     {post.bigliettiDisponibili === 0
                         ? "Sold Out"
                         : `${post.bigliettiDisponibili} disponibili`}
@@ -273,13 +277,16 @@ const PostCard = ({ post, user, responsive, onShowOnMap,footerType, onEdit, onDe
                     <p
                         style={{
                             margin: 0,
-                            fontStyle: "italic",
                             color: "#90caf9",
                             fontSize: "0.85rem",
                             fontWeight: 500,
+                            fontFamily: "'Rische', sans-serif",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "5px",
                         }}
                     >
-                        <span style={{ fontSize: "0.95rem" }}>👤</span>{" "}
+                        <PersonIcon sx={{ fontSize: "0.95rem" }} /> 
                         {post.organizzatore?._id === user?._id ? user.username : post.organizzatore?.username}
                     </p>
 
