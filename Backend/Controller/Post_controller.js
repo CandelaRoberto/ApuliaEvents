@@ -191,7 +191,6 @@ export const EliminaPost = async (req, res) => {
     await Notification.deleteMany({ event: postId });
     await Post.findByIdAndDelete(postId);
     io.emit("posts_updated");
-    io.emit("notifiche_refresh");
     res.status(200).json({ message: "Post eliminato con successo" });
 
   } catch (err) {
@@ -294,3 +293,4 @@ export const rinunciaEvento = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
