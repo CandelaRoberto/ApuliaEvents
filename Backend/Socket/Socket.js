@@ -32,13 +32,6 @@ io.on("connection", (socket) => {
 
   io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
-  socket.on("send_message", ({ receiverId, message }) => {
-    const receiverSocketId = getSocketIdRicevente(receiverId);
-    if (receiverSocketId) {
-      io.to(receiverSocketId).emit("nuovoMessaggio", message);
-    }
-  });
-
   socket.on("disconnect", () => {
     if (userId) delete userSocketMap[userId];
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
